@@ -12,7 +12,7 @@ public class playerScript : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator anim;
-    public SpriteRenderer spr;
+    public SpriteRenderer sr;
 
     public Sprite jumpIMG;
     public Sprite fallIMG;
@@ -26,6 +26,8 @@ public class playerScript : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         xInicial = transform.position.x;
         yInicial = transform.position.y;
     }
@@ -47,26 +49,26 @@ public class playerScript : MonoBehaviour
         {
             if(moveX > 0)
             {
-                spr.flipX = false;
+                sr.flipX = false;
             }
             else if(moveX < 0)
             {
-                spr.flipX = true;
+                sr.flipX = true;
             }
-            spr.sprite = jumpIMG;
+            sr.sprite = jumpIMG;
             anim.enabled = false;
         }
         else if(rb.velocity.y < 0)
         {
             if (moveX > 0)
             {
-                spr.flipX = false;
+                sr.flipX = false;
             }
             else if (moveX < 0)
             {
-                spr.flipX = true;
+                sr.flipX = true;
             }
-            spr.sprite = fallIMG;
+            sr.sprite = fallIMG;
         }
         else
         {
@@ -78,7 +80,7 @@ public class playerScript : MonoBehaviour
                 canIdle = true;
 
                 anim.SetTrigger("Corriendo");
-                spr.flipX = false;
+                sr.flipX = false;
             }
             else if(moveX < 0 && canRun)
             {
@@ -86,7 +88,7 @@ public class playerScript : MonoBehaviour
                 canIdle = true;
 
                 anim.SetTrigger("Corriendo");
-                spr.flipX = true;
+                sr.flipX = true;
             }
             else if(moveX == 0 && canIdle)
             {
