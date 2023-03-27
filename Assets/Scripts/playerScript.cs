@@ -55,7 +55,10 @@ public class playerScript : MonoBehaviour
             {
                 sr.flipX = true;
             }
+<<<<<<< HEAD
+=======
             sr.sprite = jumpIMG;
+>>>>>>> 1b12b4d73b9afde9776674217f76313a64c55254
             anim.enabled = false;
         }
         else if(rb.velocity.y < 0)
@@ -68,7 +71,11 @@ public class playerScript : MonoBehaviour
             {
                 sr.flipX = true;
             }
+<<<<<<< HEAD
+
+=======
             sr.sprite = fallIMG;
+>>>>>>> 1b12b4d73b9afde9776674217f76313a64c55254
         }
         else
         {
@@ -79,7 +86,10 @@ public class playerScript : MonoBehaviour
                 canRun = false;
                 canIdle = true;
 
+<<<<<<< HEAD
+=======
                 anim.SetTrigger("Corriendo");
+>>>>>>> 1b12b4d73b9afde9776674217f76313a64c55254
                 sr.flipX = false;
             }
             else if(moveX < 0 && canRun)
@@ -87,7 +97,10 @@ public class playerScript : MonoBehaviour
                 canRun = false;
                 canIdle = true;
 
+<<<<<<< HEAD
+=======
                 anim.SetTrigger("Corriendo");
+>>>>>>> 1b12b4d73b9afde9776674217f76313a64c55254
                 sr.flipX = true;
             }
             else if(moveX == 0 && canIdle)
@@ -95,7 +108,6 @@ public class playerScript : MonoBehaviour
                 canIdle = false;
                 canRun = true;
 
-                anim.SetTrigger("Normal");
             }
         }
     }
