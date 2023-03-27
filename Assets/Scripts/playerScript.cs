@@ -24,7 +24,7 @@ public class playerScript : MonoBehaviour
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * velocidadMovimiento;
         if (!Mathf.Approximately(0, movement))
-            transform.rotation = movement > 0 ? Quaternion.Euler(-0, -180, -0) : Quaternion.identity;
+            transform.rotation = movement > 0 ? Quaternion.identity : Quaternion.Euler(-0, -180, -0);
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
         {
             rb.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);
